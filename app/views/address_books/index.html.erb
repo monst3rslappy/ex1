@@ -1,0 +1,31 @@
+<h1>Listing address_books</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone no</th>
+    <th>Facebook profile</th>
+    <th>Twitter profile</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @address_books.each do |address_book| %>
+  <tr>
+    <td><%= address_book.name %></td>
+    <td><%= address_book.address %></td>
+    <td><%= address_book.phone_no %></td>
+    <td><%= address_book.facebook_profile %></td>
+    <td><%= address_book.twitter_profile %></td>
+    <td><%= link_to 'Show', address_book %></td>
+    <td><%= link_to 'Edit', edit_address_book_path(address_book) %></td>
+    <td><%= link_to 'Destroy', address_book, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Address book', new_address_book_path %>
